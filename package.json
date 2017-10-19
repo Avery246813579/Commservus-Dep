@@ -1,0 +1,27 @@
+{
+  "name": "Commservus",
+  "version": "1.0.0",
+  "description": "A community service helping website!",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "mocha test --reporter spec",
+    "start": "node server/index.js"
+  },
+  "private": true,
+  "dependencies": {
+    "express": "~4.14.0",
+    "body-parser": "~1.15.2",
+    "jsonwebtoken": "~7.0.0",
+    "jssql": "~1.1.9",
+    "ua-parser-js": "~0.7.10",
+    "nodemailer": "~2.6.4",
+    "aws-sdk": "~2.7.21",
+    "busboy": "~0.2.13",
+    "socket.io": "~1.7.2",
+    "mocha": "~3.2.0",
+    "chai": "~3.5.0",
+    "request": "~2.79.0"
+  },
+  "author": "Avery Durrant <avery246813579@gmail.com>",
+  "license": "UNLICENSED"
+}
