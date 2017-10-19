@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{NAME}}</title>
+
+    <link href="../mobile/assets/style/mobile.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div id="content">
+        <div class="block">
+            <div class="content" style="margin-top: 0; text-align: center;">
+                <img src="../assets/favicon.png" width="100px" height="100px">
+            </div>
+
+            <div style="margin: auto; text-align: center;">
+                <div style="font-size: 20px;">
+                    {{NAME}}
+                </div>
+
+                <div style="font-size: 15px; font-weight: bold;">
+                    {{HOST}}
+                </div>
+
+                <div style="font-size: 15px; font-weight: bold;">
+                    {{LOCATION}}
+                </div>
+
+                {{BUTTONS}}
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="bTitle">
+                More Events
+            </div>
+
+            <div class="content">
+                <div class="item" style="background-color: #fcfcfc"><img src="../assets/favicon.png" width="70" height="70" class="icon">
+
+                    <div class="info">
+                        <div class="title"> Free Cats</div>
+                        <div class="header"> Danny's Place</div>
+                        <div class="time"> 5:30PM - 6:30PM (EST) on May 18, 2017</div>
+                    </div>
+                </div>
+                <div class="item" style="background-color: #fcfcfc"><img src="../assets/favicon.png" width="70" height="70" class="icon">
+
+                    <div class="info">
+                        <div class="title"> Discovering Reading </div>
+                        <div class="header"> Danny's Place</div>
+                        <div class="time"> 1:45PM - 2:00PM (EST) on May 18, 2017</div>
+                    </div>
+                </div>
+                <div class="item" style="background-color: #fcfcfc"><img src="../assets/favicon.png" width="70" height="70" class="icon">
+
+                    <div class="info">
+                        <div class="title"> Party City Party</div>
+                        <div class="header"> Danny's Place</div>
+                        <div class="time"> 1:45PM - 2:00PM (EST) on May 18, 2017</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{FOOTER}}
+</div>
+
+{{NAVBAR_ASSETS}}
+
+<script>
+    var ID = 0;
+    var loggedIn = false;
+    /**{{JAVASCRIPT}}**/
+</script>
+<script src="../assets/scripts/Util.js"></script>
+<script src="../mobile/assets/scripts/Navbar.js"></script>
+<script src="../mobile/event/view/event.js"></script>
+
+<!--<script src="../mobile/event/view/event.min.js"></script>-->
+</body>
+</html>

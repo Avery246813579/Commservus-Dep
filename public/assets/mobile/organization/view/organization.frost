@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{NAME}}</title>
+
+    <link href="../mobile/assets/style/mobile.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div id="content">
+        <div class="block">
+            <div class="content" style="margin-top: 0; text-align: center;">
+                <img src="../assets/favicon.png" width="100px" height="100px">
+            </div>
+
+            <div style="margin: auto; text-align: center;">
+                <div style="font-size: 20px;">
+                    {{NAME}}
+                </div>
+
+                <div style="font-size: 15px; font-weight: bold;">
+                    {{USERNAME}}
+                </div>
+
+                {{BUTTONS}}
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="bTitle">
+                Upcoming Events
+            </div>
+
+            <div class="content">
+                {{EVENTS}}
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="bTitle">
+                Member Groups
+            </div>
+
+            {{GROUPS}}
+        </div>
+    </div>
+
+    {{FOOTER}}
+</div>
+
+{{NAVBAR_ASSETS}}
+
+<script>
+    var ID = 0;
+    var loggedIn = false;
+    /**{{JAVASCRIPT}}**/
+</script>
+<script src="../assets/scripts/Util.js"></script>
+<script src="../mobile/assets/scripts/Navbar.js"></script>
+<script src="../mobile/organization/view/organization.js"></script>
+
+<!--<script src="../mobile/organization/view/organization.min.js"></script>-->
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <link href="desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    <div class="centerForm _row">
+        <div class="title">
+            Login to Commservus
+        </div>
+
+        <div class="description">
+            Log into your account to continue
+        </div>
+
+        <div class="status" id="status">
+
+        </div>
+
+        <form id="FORM">
+            <div id="ID" style="color: #cc0000"></div>
+            <input name="ID" type="text" placeholder="Username or Email"><br>
+
+            <div id="PASSWORD" style="color: #cc0000"></div>
+            <input name="PASSWORD" type="password" placeholder="Password">
+
+            <!--<input type="checkbox" id="box-1"><label for="box-1">Remember me</label>-->
+
+            <input type="button" onclick="login()" value="Login"><br>
+            <br>
+            <div class="description">
+                Don't have account?
+            </div>
+            <input type="button" onclick="location.href = '/signup'" style="background-color: #b4b4b4" value="Signup">
+            <input type="button" onclick="location.href = '/forgot'" style="background-color: #b4b4b4" value="Forgot your password">
+
+            <input type="submit" style="display: none">
+        </form>
+    </div>
+</div>
+
+<!--<script src="assets/scripts/Util.js"></script>-->
+<!--<script src="desktop/general/login/login.js"></script>-->
+
+<script src="desktop/general/login/login.min.js"></script>
+</body>
+</html>

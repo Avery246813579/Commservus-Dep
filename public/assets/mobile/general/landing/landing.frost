@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commservus</title>
+
+    <link href="mobile/assets/style/mobile.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    <div id="nav">
+        <!--<img src="assets/favicon.png" width="20" height="20" style="float: left; padding-right: 5px">-->
+        <div class="element">Commservus</div>
+
+        <div class="menu" onclick="toggleMenu()"><i class="fa fa-bars"></i></div>
+        <div class="search" onclick="openSearch()"><i class="fa fa-search"></i></div>
+    </div>
+
+    <div id="content">
+        <div id="landing">
+            <div class="icon">
+                <img src="assets/favicon.png" width="75" height="75">
+            </div>
+
+            <div class="title">
+                Community Service Made Easier
+            </div>
+
+            <div class="description">
+                An all in one service that you can host, track, and find community service events with. Access on any
+                device, at any time.
+            </div>
+
+            <button class="button" onclick="openLogin()">Login</button>
+            <button class="button" onclick="openSignup()">Signup</button>
+        </div>
+    </div>
+</div>
+
+<div id="search-bar">
+    <i class="fa fa-chevron-left sb-back" onclick="closeSearch()"></i>
+    <input type="search" placeholder="Search">
+</div>
+
+<div id="menu">
+    <a href="#" onclick="openLogin()">
+        <div class="item">
+            <i class="fa fa-user icon"></i>
+
+            <div class="content">
+                Login / Signup
+            </div>
+        </div>
+    </a>
+</div>
+
+<div id="bleed">
+
+</div>
+
+<div id="loginModal" class="modal">
+    <i class="fa fa-times close"></i>
+
+    <div class="icon">
+        <img src="assets/favicon.png" width="50" height="50">
+    </div>
+
+    <form id="loginForm">
+        <div class="title">
+            Login to Commservus
+        </div>
+
+        <div class="status">
+        </div>
+
+        <input type="text" placeholder="Username or Email" name="id">
+        <input class="removeTop" type="password" placeholder="Password" name="password"><br>
+        <!--<input type="checkbox" id="box-1"><label for="box-1">Remember me</label>-->
+
+        <input type="button" value="LOGIN" onclick="loginAction()">
+        <input type="submit" style="display: none">
+    </form>
+
+    <div class="texts">
+        <a href="#" onclick="openForgot()">
+            <div class="text"> Forgot Password?</div>
+        </a>
+
+        <a href="#" onclick="openSignup()">
+            <div class="text"> Don't have an account?</div>
+        </a>
+    </div>
+</div>
+
+<div id="signupModal" class="modal">
+    <i class="fa fa-times close"></i>
+
+    <div class="icon">
+        <img src="assets/favicon.png" width="50" height="50">
+    </div>
+
+    <form id="signupForm">
+        <div class="title">
+            Signup for Commservus
+        </div>
+
+        <div class="status">
+        </div>
+
+        <input type="text" placeholder="Display Name" name="display">
+        <input class="removeTop" type="text" placeholder="Username" name="username">
+        <input class="removeTop" type="text" placeholder="Email" name="email">
+        <input class="removeTop" type="password" placeholder="Password" name="password">
+        <input class="removeTop" type="password" placeholder="Confirm Password" name="confirm">
+        <input type="button" value="SIGNUP" onclick="signupAction()">
+        <input type="submit" style="display: none">
+    </form>
+
+    <div class="texts">
+        <a href="#" onclick="openLogin()">
+            <div class="text"> Already have an account?</div>
+        </a>
+    </div>
+</div>
+
+<div id="forgotModal" class="modal">
+    <i class="fa fa-times close"></i>
+
+    <div class="icon">
+        <img src="assets/favicon.png" width="50" height="50">
+    </div>
+
+    <form id="forgotForm">
+        <div class="title">
+            Forgot Password
+        </div>
+
+        <div class="status">
+        </div>
+
+        <input type="text" placeholder="Username or Email" name="id">
+        <input type="button" value="FORGOT" onclick="forgotAction()">
+        <input type="submit" style="display: none">
+    </form>
+
+    <div class="texts">
+        <a href="#" onclick="openLogin()">
+            <div class="text"> Remember your info?</div>
+        </a>
+    </div>
+</div>
+
+<div id="alphaModal" class="modal">
+    <i class="fa fa-times close"></i>
+
+    <div class="icon">
+        <img src="assets/favicon.png" width="50" height="50">
+    </div>
+
+    <form>
+        <div class="title">
+            Commservus Closed Alpha
+        </div>
+
+        <div class="description">
+            Commservus is currently in closed alpha. This means that only certain people can signup. If you feel like you
+            should be able to signup, contact avery@frostbyte.co
+        </div>
+    </form>
+</div>
+
+<!--<script src="assets/scripts/Util.js"></script>-->
+<!--<script src="mobile/general/landing/landing.js"></script>-->
+
+<script src="mobile/general/landing/landing.min.js"></script>
+</body>
+</html>

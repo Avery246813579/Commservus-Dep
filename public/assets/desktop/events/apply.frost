@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Event</title>
+</head>
+<body>
+
+<form id="FORM">
+    <div id="START_DATE" style="color: #cc0000"></div>
+    <label>Start Time:
+    <input name="START_DATE" type="datetime-local" placeholder="Display Name"><br>
+    </label>
+
+    <div id="END_DATE" style="color: #cc0000"></div>
+
+    <label>End Time:
+    <input name="END_DATE" type="datetime-local" placeholder="Display Name"><br>
+    </label>
+
+    <br>
+    <button onclick="apply()">Apply to Event</button>
+</form>
+
+<script src="../../assets/scripts/Util.js"></script>
+<script src="../../assets/scripts/sha.min.js"></script>
+<script>
+    var ID, START_TIME, END_TIME;
+    /**{{JAVASCRIPT}}**/
+
+    START_TIME = parseTime(START_TIME);
+    END_TIME = parseTime(END_TIME);
+
+    var FORM = document.getElementById('FORM');
+
+    var START_DATE = getInputDate(START_TIME);
+    var END_DATE = getInputDate(END_TIME);
+    getInputs(FORM, 'START_DATE').value = START_DATE[1] + "T" + START_DATE[0];
+    getInputs(FORM, 'END_DATE').value = END_DATE[1] + "T" + END_DATE[0];
+
+    FORM.onsubmit = function (e) {
+        e.preventDefault();
+        apply();
+
+        return false;
+    };
+
+    var START_DATE_STATUS = document.getElementById('START_DATE');
+    var END_DATE_STATUS = document.getElementById('END_DATE');
+
+    function apply() {
+        var START_DATE = getInputs(FORM, 'START_DATE').value;
+        var END_DATE = getInputs(FORM, 'END_DATE').value;
+
+        var ERROR = false;
+        var SDS = START_DATE.split('T');
+        var EDS = END_DATE.split('T');
+        var SDSS = SDS[0].split('-');
+        var EDSS = EDS[0].split('-');
+        var sDate = parseTime(SDS[1] + ":00 " + SDSS[1] + "-" + SDSS[2] + "-" + SDSS[0]);
+        var eDate = parseTime(EDS[1] + ":00 " + EDSS[1] + "-" + EDSS[2] + "-" + EDSS[0]);
+        var cDate = getServerTime();
+
+
+        if(sDate.getTime() < START_TIME.getTime()){
+            START_DATE_STATUS.style.display = "block";
+            START_DATE_STATUS.innerHTML = "Start date has to be within the events dates!";
+            ERROR = true;
+        }else if(eDate.getTime() > END_TIME.getTime()){
+            START_DATE_STATUS.style.display = "block";
+            START_DATE_STATUS.innerHTML = "Start date has to be within the events dates!";
+            ERROR = true;
+        }else{
+            START_DATE_STATUS.innerHTML = "";
+            END_DATE_STATUS.innerHTML = "";
+        }
+
+        if (ERROR) {
+            return;
+        }
+
+        sendSimpleRequest('event/' + ID + "/apply", 'post', {
+            START_TIME: formatTime(sDate),
+            END_TIME: formatTime(eDate)
+        }, function (err, payload) {
+            if (err) {
+                console.log("INTERNAL ERROR");
+                return;
+            }
+
+            if (payload.success) {
+                setTimeout(function(){
+                    location.href = "../" + ID;
+                }, 250);
+            } else {
+                console.dir(payload);
+            }
+        });
+
+    }
+</script>
+
+</body>
+</html>

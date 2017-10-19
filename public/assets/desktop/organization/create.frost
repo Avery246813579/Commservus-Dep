@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Organization</title>
+
+    <link href="../desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div class="centerForm _row" style="background-color: #f3f3f4">
+        <div class="title">
+            Create Organization
+        </div>
+
+        <div class="description">
+            Create an Organization to create events and gain members
+        </div>
+
+        <form id="FORM">
+            <div id="DISPLAY_NAME" style="color: #cc0000"></div>
+            <input name="DISPLAY_NAME" type="text" placeholder="Display Name"><br>
+
+            <div id="USERNAME" style="color: #cc0000"></div>
+            <input name="USERNAME" type="text" placeholder="Username"><br>
+
+            <div id="DESCRIPTION" style="color: #cc0000"></div>
+            <textarea name="DESCRIPTION" rows="10" cols="50" placeholder="Description"></textarea>
+
+            <div id="DROP" style="color: #cc0000"></div>
+            <label>Organization Type
+                <select name="DROP">
+                    <option value="0">General</option>
+                    <option value="1">School</option>
+                </select>
+            </label>
+            <br>
+            <input type="button" value="Create Organization" onclick="login()">
+        </form>
+    </div>
+</div>
+
+<div id="_footer">
+    <b>Copyright</b> Frostbyte LLC © 2017
+</div>
+
+
+<script src="../assets/scripts/Util.js"></script>
+<script src="../assets/scripts/Navbar.js"></script>
+<script>
+    var FORM = document.getElementById('FORM');
+    var DISPLAY_NAME_STATUS = document.getElementById('DISPLAY_NAME');
+    var USERNAME_STATUS = document.getElementById('USERNAME');
+    var DESCRIPTION_STATUS = document.getElementById('DESCRIPTION');
+    var DROP_STATUS = document.getElementById('DROP');
+
+    FORM.onsubmit = function (e) {
+        e.preventDefault();
+
+        return false;
+    };
+
+    function login() {
+        var DISPLAY_NAME = getInputs(FORM, 'DISPLAY_NAME').value;
+        var USERNAME = getInputs(FORM, 'USERNAME').value;
+        var DESCRIPTION = getInputs(FORM, 'DESCRIPTION').value;
+        var DROP = getInputs(FORM, 'DROP');
+
+        var ERROR = false;
+        if (DISPLAY_NAME.length < 1 || DISPLAY_NAME.length > 64) {
+            DISPLAY_NAME_STATUS.innerHTML = "Display name has to be between 0-64 characters";
+            ERROR = true;
+        }
+
+        if (USERNAME.length < 5 || USERNAME.length > 16) {
+            USERNAME.innerHTML = "Username has to be between 1-64 characters";
+            ERROR = true;
+        }
+
+        if (DESCRIPTION.length < 1 || DESCRIPTION.length > 255) {
+            DESCRIPTION_STATUS.innerHTML = "Description has to be between 1-255 characters";
+            ERROR = true;
+        }
+
+        if (ERROR) {
+            console.log("ERROR");
+            return;
+        }
+
+        sendSimpleRequest('organization', 'post', {
+            NAME: DISPLAY_NAME,
+            USERNAME: USERNAME,
+            DESCRIPTION: DESCRIPTION,
+            TYPE: DROP.value
+        }, function (err, payload) {
+            if (err) {
+                console.log("ERROR: " + err);
+                return;
+            }
+
+            if (payload.success) {
+                location.href = "/";
+            } else {
+                console.dir(payload);
+            }
+        });
+
+    }
+</script>
+
+</body>
+</html>

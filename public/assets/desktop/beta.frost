@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commservus Beta</title>
+
+    <link href="desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="_container">
+    <div class="centerForm _row">
+        <div class="title">
+            Commservus Beta
+        </div>
+
+        Commservus is currently in closed beta. This means that only certain people can signup. If you feel like you should be able to signup, contact avery@frostbyte.co
+        <br><br>
+        <input type="button" onclick="goBack()" style="background-color: #b4b4b4" value="Let's go back">
+    </div>
+</div>
+
+<script>
+    function goBack(){
+        if(typeof QueryString().redirect != "undefined"){
+            location.href = QueryString().redirect;
+            return;
+        }
+
+        location.href = "../";
+    }
+</script>
+</body>
+</html>

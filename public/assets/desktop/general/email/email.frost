@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commservus Email</title>
+
+    <link href="desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    <div class="centerForm _row">
+        {{EMAIL}}
+    </div>
+</div>
+
+<!--<script src="assets/scripts/Util.js"></script>-->
+<!--<script src="desktop/general/email/email.js"></script>-->
+
+<script src="desktop/general/email/email.min.js"></script>
+</body>
+</html>

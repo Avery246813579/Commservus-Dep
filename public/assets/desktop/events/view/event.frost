@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{NAME}}</title>
+
+    <link href="../desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div class="_side_max">
+        <div class="_row _nolap project">
+            <div class="logo">
+                <img src="http://placehold.it/150x150" width="150" height="150">
+            </div>
+
+            <div class="info">
+                <div style="font-size: 20px; font-weight: bold; padding: 2px;">
+                    {{NAME}}
+                </div>
+
+                <div style="font-size: 20px; padding: 2px;">
+                    Acton Boxborough Regional High School
+                </div>
+
+                <div style="font-size: 16px; font-weight: bold; padding: 2px;">
+                    {{DATE}}
+                </div>
+
+                <div style="font-size: 16px; padding: 2px;">
+                    {{DESCRIPTION}}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="_row _nolap">
+            <div class="_title">
+                Similar Events
+            </div>
+
+            <table class="_table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Location
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                </tr>
+                <tr class="_row" onclick="location.href='../event/4'">
+                    <td> Free Cats</td>
+                    <td> Acton Boxoborough Regional Highschool</td>
+                    <td> 5:30PM - 6:30PM (EST) on May 18, 2017</td>
+                </tr>
+                <tr class="_row" onclick="location.href='../event/5'">
+                    <td> Reading books</td>
+                    <td> 15 Old Village</td>
+                    <td> 1:45PM - 2:00PM (EST) on May 18, 2017</td>
+                </tr>
+                <tr class="_row" onclick="location.href='../event/6'">
+                    <td> Party City Party</td>
+                    <td> Party City Acton</td>
+                    <td> 1:45PM - 2:00PM (EST) on May 18, 2017</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="_side_min">
+        <div class="_row _nolap">
+            <div class="_title">
+                Actions
+            </div>
+
+            {{BUTTONS}}
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="APPLY_MODAL">
+    <div class="content" style="margin: auto">
+        <div class="full">
+            <form id="FORM">
+                <div id="START_DATE_STATUS" style="color: #cc0000"></div>
+                <label>Start Date:
+                    <input name="START_DATE" type="datetime-local" placeholder="Display Name"><br>
+                </label>
+
+                <br>
+
+                <div id="END_DATE_STATUS" style="color: #cc0000"></div>
+                <label>End Date:
+                    <input name="END_DATE" type="datetime-local" placeholder="Display Name"><br>
+                </label>
+
+                <input type="button" value="Apply" onclick="applyAction()">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="_footer">
+    <b>Copyright</b> Frostbyte LLC © 2017
+</div>
+
+<script>
+    var ID = 0;
+    var loggedIn = false;
+    /**{{JAVASCRIPT}}**/
+</script>
+<script src="../assets/scripts/Util.js"></script>
+<script src="../assets/scripts/Navbar.js"></script>
+<script src="../desktop/events/view/event.js"></script>
+
+<!--<script src="../desktop/events/view/event.min.js"></script>-->
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+
+    <link href="desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    <div class="centerForm _row">
+        <div class="title">
+            Sign up for Commservus
+        </div>
+
+        <div class="description">
+            Sign up for a Commservus Account
+        </div>
+
+        <div class="status" id="status">
+
+        </div>
+
+        <form id="FORM">
+            <div id="DISPLAY_NAME" style="color: #cc0000"></div>
+            <input name="DISPLAY_NAME" type="text" placeholder="Display Name"><br>
+
+            <div id="USERNAME" style="color: #cc0000"></div>
+            <input name="USERNAME" type="text" placeholder="Username"><br>
+
+            <div id="EMAIL" style="color: #cc0000"></div>
+            <input name="EMAIL" type="email" placeholder="Email"><br>
+
+            <div id="PASSWORD" style="color: #cc0000"></div>
+            <input name="PASSWORD" type="password" placeholder="Password"><br>
+
+            <div id="CONFIRM_PASSWORD" style="color: #cc0000"></div>
+            <input name="CONFIRM_PASSWORD" type="password" placeholder="Confirm Password"><br>
+            <input type="button" onclick="register()" value="Register">
+            <br><br>
+            <div class="description">
+                Already have an account?
+            </div>
+            <input type="button" onclick="location.href = '/login'" style="background-color: #b4b4b4" value="Login">
+            <input type="submit" style="display: none">
+        </form>
+    </div>
+</div>
+
+<!--<script src="assets/scripts/Util.js"></script>-->
+<!--<script src="desktop/general/signup/signup.js"></script>-->
+
+<script src="desktop/general/signup/signup.min.js"></script>
+
+</body>
+</html>

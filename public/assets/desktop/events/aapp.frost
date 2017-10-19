@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{NAME}}</title>
+</head>
+<body>
+
+{{INFO}}
+<br>
+{{ACTION}}
+
+<script src="../../../assets/scripts/Util.js"></script>
+<script src="../../../assets/scripts/sha.min.js"></script>
+<script>
+    var ID, EVENT;
+
+    /**{{JAVASCRIPT}}**/
+
+    var ACCEPT = document.getElementById('ACCEPT');
+    var DENY = document.getElementById('DENY');
+    var CANCEL = document.getElementById('CANCEL');
+
+    if (ACCEPT != null && DENY != null) {
+        ACCEPT.onclick = function () {
+            sendSimpleRequest('event/' + EVENT + "/application/" + ID, "POST", {STATUS: 1}, function (err, payload) {
+               if(err){
+                   console.log('ERROR');
+                   return;
+               }
+
+                if(payload.success){
+                    setTimeout(function(){
+                        location.reload();
+                    }, 250);
+                }else{
+                    console.dir(payload)
+                }
+            });
+        };
+
+        DENY.onclick = function () {
+            sendSimpleRequest('event/' + EVENT + "/application/" + ID, "POST", {STATUS: 2}, function (err, payload) {
+                if(err){
+                    console.log('ERROR');
+                    return;
+                }
+
+                if(payload.success){
+                    setTimeout(function(){
+                        location.reload();
+                    }, 250);
+                }else{
+                    console.dir(payload)
+                }
+            });
+        }
+    }
+
+    if (typeof CANCEL != "undefined") {
+        CANCEL.onclick = function () {
+            sendSimpleRequest('event/' + EVENT + "/application/" + ID, "POST", {STATUS: 3}, function (err, payload) {
+                if (err) {
+                    console.log('ERROR');
+                    return;
+                }
+
+                if (payload.success) {
+                    setTimeout(function () {
+                        location.reload();
+                    }, 250);
+                } else {
+                    console.dir(payload)
+                }
+            });
+        };
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{NAME}}</title>
+
+    <link href="../desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div class="_side_max">
+        <div class="_row _nolap project">
+            <div class="logo">
+                <img src="http://placehold.it/150x150" width="150" height="150">
+            </div>
+
+            <div class="info">
+                <div style="font-size: 20px; font-weight: bold; padding: 2px;">
+                    {{NAME}}
+                </div>
+
+                <div style="font-size: 20px; padding: 2px;">
+                    {{USERNAME}}
+                </div>
+
+                <div style="font-size: 16px; padding: 2px;">
+                    {{DESCRIPTION}}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="_row _nolap">
+            <div class="_title">
+                Events
+
+                <div class="_description">
+                    Upcoming community service events
+                </div>
+            </div>
+
+            <table class="_table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Location
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                </tr>
+                {{EVENTS}}
+            </table>
+        </div>
+    </div>
+
+    <div class="_side_min">
+        <div class="_row _nolap">
+            <div class="_title">
+                Actions
+            </div>
+
+            <div>
+                {{BUTTONS}}
+            </div>
+        </div>
+
+        <div class="_row _nolap groups">
+            <div class="_title">
+                Groups
+            </div>
+
+            <div>
+                {{GROUPS}}
+            </div>
+        </div>
+
+        <!--<div class="_row _nolap" style="height: 100px">-->
+            <!--<div class="_title">-->
+                <!--Ads-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+
+<div id="_footer">
+    <b>Copyright</b> Frostbyte LLC © 2017
+</div>
+
+<script>
+    var ID = 0;
+    /**{{JAVASCRIPT}}**/
+</script>
+<script src="../assets/scripts/Util.js"></script>
+<script src="../desktop/organization/view/organization.js"></script>
+<script src="../assets/scripts/Navbar.js"></script>
+
+<!--<script src="../desktop/general/forgot/forgot.min.js"></script>-->
+
+</body>
+</html>

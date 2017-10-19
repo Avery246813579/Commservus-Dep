@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Event</title>
+</head>
+<body>
+
+Start Time: {{START_DATE}}<br>
+End Time: {{END_DATE}}<br>
+Status: {{STATUS}}
+
+<script src="../../assets/scripts/Util.js"></script>
+<script src="../../assets/scripts/sha.min.js"></script>
+<script>
+</script>
+
+</body>
+</html>

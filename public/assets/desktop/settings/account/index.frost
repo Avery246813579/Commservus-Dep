@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commservus</title>
+
+    <link href="desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div class="_side_max">
+        <div class="_row _nolap">
+            <div class="_title">
+                <div style="float: right">
+                    <a href="organization/create">Create Org</a>
+                </div>
+
+                Organizations
+
+                <div class="_description">
+                    Displaying the organizations you are a member of.
+                </div>
+
+            </div>
+
+            <table class="_table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Username
+                    </th>
+                </tr>
+
+                {{ORGANIZATIONS}}
+            </table>
+        </div>
+
+        <div class="_row _nolap">
+            <div class="_title">
+                Events
+
+                <div class="_description">
+                    Upcoming community service events
+                </div>
+            </div>
+
+            <table class="_table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Host
+                    </th>
+                    <th>
+                        Location
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                </tr>
+
+                {{EVENTS}}
+            </table>
+        </div>
+    </div>
+
+    <div class="_side_min">
+        <div class="_row _nolap">
+            <div class="_title">
+                Nearby Events
+
+                <div class="_description">
+                    Nearby Open EEvents
+                </div>
+            </div>
+        </div>
+
+        <div class="_row _nolap" style="height: 500px">
+            <div class="_title">
+                Ads
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="_footer">
+    <b>Copyright</b> Frostbyte LLC © 2017
+</div>
+
+<!--<script src="assets/scripts/Util.js"></script>-->
+<!--<script src="assets/scripts/Navbar.js"></script>-->
+
+<script src="desktop/general/index/index.min.js"></script>
+</body>
+</html>

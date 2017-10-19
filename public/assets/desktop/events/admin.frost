@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{NAME}}</title>
+</head>
+<body>
+
+Applications:<br>
+{{APPLICATIONS}}
+
+<script src="../assets/scripts/Util.js"></script>
+<script>
+</script>
+
+</body>
+</html>

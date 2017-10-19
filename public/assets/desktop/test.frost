@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commservus Test</title>
+
+    <link href="desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div class="_side_max">
+        <div class="_row _nolap">
+            <div class="_title">
+                Events
+
+                <div class="_description">
+                    Community Service Events
+                </div>
+            </div>
+
+            <table class="_table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Host
+                    </th>
+                    <th>
+                        Location
+                    </th>
+                    <th class="_center">
+                        Dog
+                    </th>
+                </tr>
+                <tr class="_row">
+                    <td>
+                        Service Events
+                    </td>
+                    <td>
+                        Steven Wood
+                    </td>
+                    <td>
+                        20 Village
+                    </td>
+                    <td class="_center">
+                        Remove Cat Dog
+                    </td>
+                </tr>
+                <tr class="_row">
+                    <td>
+                        My Events
+                    </td>
+                    <td>
+                        Connor Cattes
+                    </td>
+                    <td>
+                        The Trap
+                    </td>
+                    <td class="_center">
+                        Remove Cat Dog
+                    </td>
+                </tr>
+                <tr class="_row">
+                    <td>
+                        Trap Trap Trap Trap
+                    </td>
+                    <td>
+                        Avery Durrant
+                    </td>
+                    <td>
+                        Real Office
+                    </td>
+                    <td class="_center">
+                        Remove Cat Dog
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="_side_min">
+        <div class="_row ">
+            <div class="_head">
+                <img src="assets/icons/user.png" style="width: 80%; height: 80%; margin: auto; text-align: center">
+
+                <div>Avery Durrant</div>
+                <div>@JamesTheDog</div>
+                <div>This is a bio bar and can do whatever it wants</div>
+            </div>
+
+            <div class="_button">
+                Friend
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="_footer">
+    <b>Copyright</b> Frostbyte LLC © 2017
+</div>
+
+<script src="assets/scripts/Util.js"></script>
+<script src="assets/scripts/Navbar.js"></script>
+</body>
+</html>

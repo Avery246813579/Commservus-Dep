@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commservus</title>
+
+    <link href="../../mobile/assets/style/mobile.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div id="content">
+        <div class="block">
+            <div class="bTitle">
+                Create an Organization
+            </div>
+
+            <div class="content">
+                <div class="bItemTitle">
+                    Name
+                </div>
+                <input type="text" placeholder="Placeholder Name" id="displayInput">
+
+                <div class="bItemTitle">
+                    Username
+                </div>
+                <input type="text" placeholder="Placeholder Username" id="usernameInput">
+
+                <div class="bItemTitle">
+                    Description
+                </div>
+
+                <textarea placeholder="Placeholder Description" rows="3" id="descriptionInput"></textarea>
+
+                <select class="simpleSelect" id="typeInput">
+                    <option value="0">Organization</option>
+                    <option value="1">School</option>
+                </select>
+
+                <div class="status" id="status" style="margin-top: 10px; left: 0">
+                </div>
+
+                <input type="button" value="Create Organization" onclick="createOrg()">
+            </div>
+        </div>
+    </div>
+
+    {{FOOTER}}
+</div>
+
+{{NAVBAR_ASSETS}}
+
+<script>
+    var loggedIn = false;
+    /**{{JAVASCRIPT}}**/
+</script>
+<!--<script src="../../assets/scripts/Util.js"></script>-->
+<!--<script src="../../mobile/organization/create/create.js"></script>-->
+<!--<script src="../../mobile/assets/scripts/Navbar.js"></script>-->
+
+<script src="../../mobile/organization/create/create.min.js"></script>
+</body>
+</html>

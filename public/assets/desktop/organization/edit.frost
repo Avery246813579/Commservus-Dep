@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{NAME}}</title>
+
+    <link href="../../desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div class="_side_max">
+        <div class="_row _nolap project">
+            <div class="logo">
+                <img src="http://placehold.it/150x150" width="150" height="150">
+            </div>
+
+            <div class="info">
+                <div class="title">
+                    <input type="text" value="{{NAME}}" id="ONAME" placeholder="Display Name">
+                </div>
+
+                <div class="headline">
+                    {{USERNAME}}
+                </div>
+
+                <div class="description">
+                    <textarea rows="2" cols="50" id="ODESCRIPTION">{{DESCRIPTION}}</textarea>
+                </div>
+
+                <input type="button" onclick="updateOrg()" value="Update Info">
+            </div>
+        </div>
+
+
+        <div class="_row _nolap">
+            <div class="_title">
+                Groups
+
+                <div class="_description">
+                    Groups for Members
+                </div>
+            </div>
+
+            <table class="_table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Password
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+                {{GROUPS}}
+            </table>
+        </div>
+    </div>
+
+    <div class="_side_min">
+        <div class="_row _nolap groups">
+            <div class="_title">
+                Admins
+            </div>
+
+            <div id="admins">
+                {{ADMINS}}
+            </div>
+        </div>
+
+        <div class="_row _nolap" style="height: 100px">
+            <div class="_title">
+                Ads
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="_footer">
+    <b>Copyright</b> Frostbyte LLC © 2017
+</div>
+
+<div class="modal" id="addUser">
+    <div class="content" style="margin: auto">
+        <div class="full">
+            <input type="text" id="adminSearch" placeholder="Username">
+
+            <div id="adminAddPanel">
+                <div class="_row" style="background-color: #E0E0E0; width: 50%; margin: auto;">
+                    No search
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../assets/scripts/Util.js"></script>
+<script src="../../assets/scripts/Navbar.js"></script>
+<script>
+    var ADD_USER_MODAL = document.getElementById('addUser');
+    var ADMIN_ADD_PANEL = document.getElementById('adminAddPanel');
+    var ADMIN_SEARCH = document.getElementById('adminSearch');
+    var ADMINS = document.getElementById('admins');
+    var admins, id, oid;
+
+    /**{{JAVASCRIPT}}**/
+
+    var modals = document.getElementsByClassName("modal");
+    window.onclick = function (event) {
+        for (var i = 0; i < modals.length; i++) {
+            if (event.target == modals[i]) {
+                modals[i].style.display = "none";
+            }
+        }
+    };
+
+    function addAdmin() {
+        ADD_USER_MODAL.style.display = "block";
+    }
+
+    new TimeKeyDelay(250, ADMIN_SEARCH, function(){
+        sendSimpleRequest('account/find/username/' + ADMIN_SEARCH.value, 'GET', {}, function(err, callback){
+            if(err){
+                console.dir('ERROR');
+                return;
+            }
+
+            if(callback.success){
+                ADMIN_ADD_PANEL.innerHTML = "";
+                if(callback.data.length < 1){
+                    ADMIN_ADD_PANEL.innerHTML += '<div class="_row" style="background-color: #E0E0E0; width: 50%; margin: auto;">No User Found</div>';
+
+                    return;
+                }
+
+                for(var i = 0; i < callback.data.length; i++) {
+                    var user = callback.data[i];
+
+                    if(user['ID'] == id){
+                        ADMIN_ADD_PANEL.innerHTML += '<div class="_row" style="background-color: #E0E0E0; width: 50%; margin: auto;"> ' + user['DISPLAY_NAME'] + '</div>';
+                        continue;
+                    }
+
+                    if (typeof admins[user['ID']] == "undefined") {
+                        ADMIN_ADD_PANEL.innerHTML += '<div class="_row" style="background-color: #E0E0E0; width: 50%; margin: auto;"> ' + user['DISPLAY_NAME'] + ' <input type="button" onclick="makeUserAdmin(' + user['ID'] + ')" value="+" style="float: right; width: 12px !important; height: 12px; top: -7px; position: relative;"> </div>';
+                    }else{
+                        ADMIN_ADD_PANEL.innerHTML += '<div class="_row" style="background-color: #E0E0E0; width: 50%; margin: auto;"> ' + user['DISPLAY_NAME'] + ' <input type="button" onclick="removeAdmin(' + user['ID'] + ')" value="-" style="float: right; width: 12px !important; height: 12px; top: -7px; position: relative; background-color: #b94a48;"> </div>';
+                    }
+                }
+            }else{
+                console.dir(callback);
+            }
+        });
+    });
+
+    function makeUserAdmin(id){
+        sendSimpleRequest('organization/' + oid + '/admin/' + id, 'POST', {}, function(err, payload){
+            if(err){
+                console.log("Error");
+                return;
+            }
+
+            if(payload.success){
+                setTimeout(function(){
+                    location.reload();
+                }, 250);
+            }else{
+                console.dir(payload);
+            }
+        });
+    }
+
+
+    function removeAdmin(id){
+        sendSimpleRequest('organization/' + oid + '/admin/' + id, 'DELETE', {}, function(err, payload){
+            if(err){
+                console.log("Error");
+                return;
+            }
+
+            if(payload.success){
+                setTimeout(function(){
+                    location.reload();
+                }, 250);
+            }else{
+                console.dir(payload);
+            }
+        });
+    }
+
+    var ORG_NAME = document.getElementById('ONAME');
+    var ORG_DESCRIPTION = document.getElementById('ODESCRIPTION');
+    function updateOrg(){
+        sendSimpleRequest('organization/' + oid, 'PATCH', {NAME: ORG_NAME.value, DESCRIPTION: ORG_DESCRIPTION.value}, function(err, payload){
+            if(err){
+                console.log("Error");
+                return;
+            }
+
+            if(payload.success){
+                setTimeout(function(){
+                    location.reload();
+                }, 250);
+            }else{
+                console.dir(payload);
+            }
+        });
+    }
+
+    function updateGroup(id){
+        var NAME_ID = document.getElementById(id + '_NAME');
+        var PASSWORD_ID = document.getElementById(id + '_PASSWORD');
+
+        sendSimpleRequest('organization/' + oid + '/group/' + id, 'PATCH', {NAME: NAME_ID.value, PASSWORD: PASSWORD_ID.value}, function(err, payload){
+            if(err){
+                console.log("Error");
+                return;
+            }
+
+            if(payload.success){
+                setTimeout(function(){
+                    location.reload();
+                }, 250);
+            }else{
+                console.dir(payload);
+            }
+        });
+    }
+
+    var CREATE_NAME = document.getElementById('CREATE_NAME');
+    var CREATE_PASSWORD = document.getElementById('CREATE_PASSWORD');
+    function createGroup(){
+        sendSimpleRequest('organization/' + oid + '/group', 'POST', {NAME: CREATE_NAME.value, PASSWORD: CREATE_PASSWORD.value}, function(err, payload){
+            if(err){
+                console.log("Error");
+                return;
+            }
+
+            if(payload.success){
+                setTimeout(function(){
+                    location.reload();
+                }, 250);
+            }else{
+                console.dir(payload);
+            }
+        });
+    }
+
+    function deleteGroup(id){
+        sendSimpleRequest('organization/' + oid + '/group/' + id, 'DELETE', {}, function(err, payload){
+            if(err){
+                console.log("Error");
+                return;
+            }
+
+            if(payload.success){
+                setTimeout(function(){
+                    location.reload();
+                }, 250);
+            }else{
+                console.dir(payload);
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commservus</title>
+
+    <link href="mobile/assets/style/mobile.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div id="content">
+        <div class="title">
+            <i class="fa fa-users" style="width: 15px"></i>
+            Organizations
+        </div>
+
+        {{ORGANIZATIONS}}
+
+        <div class="title">
+            <i class="fa fa-newspaper-o" style="width: 15px"></i>
+            Events
+        </div>
+
+        {{EVENTS}}
+    </div>
+
+    {{FOOTER}}
+</div>
+
+{{NAVBAR_ASSETS}}
+
+<script>
+    var loggedIn = false;
+    /**{{JAVASCRIPT}}**/
+</script>
+<script src="assets/scripts/Util.js"></script>
+<script src="mobile/general/index/index.js"></script>
+
+<!--<script src="mobile/general/index/index.min.js"></script>-->
+</body>
+</html>

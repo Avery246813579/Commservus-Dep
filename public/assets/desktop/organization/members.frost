@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{NAME}} Members</title>
+
+    <link href="../../../desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../../assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div class="_side_max">
+        <div class="_row _nolap project">
+            <div class="logo">
+                <img src="http://placehold.it/150x150" width="150" height="150">
+            </div>
+
+            <div class="info">
+                <div class="title">
+                    <input type="text" value="{{NAME}}" id="ONAME" placeholder="Display Name">
+                </div>
+
+                <div class="headline">
+                    {{ORGANIZATION}}
+                </div>
+
+                <div class="description">
+                    <textarea rows="2" cols="50" id="ODESCRIPTION">{{DESCRIPTION}}</textarea>
+                </div>
+
+                <input type="button" onclick="updateOrg()" value="Update Info">
+            </div>
+        </div>
+
+
+        <div class="_row _nolap">
+            <div class="_title">
+                Members
+
+                <div class="_description">
+                    Members for the {{NAME}} Group
+                </div>
+            </div>
+
+            <table class="_table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+                {{MEMBERS}}
+            </table>
+        </div>
+    </div>
+
+    <div class="_side_min">
+        <div class="_row _nolap groups">
+            <div class="_title">
+                Admins
+            </div>
+
+            <div id="admins">
+                {{ADMINS}}
+            </div>
+        </div>
+
+        <div class="_row _nolap" style="height: 100px">
+            <div class="_title">
+                Ads
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="_footer">
+    <b>Copyright</b> Frostbyte LLC © 2017
+</div>
+
+<div class="modal" id="addUser">
+    <div class="content" style="margin: auto">
+        <div class="full">
+            <input type="text" id="adminSearch" placeholder="Username">
+
+            <div id="adminAddPanel">
+                <div class="_row" style="background-color: #E0E0E0; width: 50%; margin: auto;">
+                    No search
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../../assets/scripts/Util.js"></script>
+<script src="../../../assets/scripts/Navbar.js"></script>
+<script>
+    /**{{JAVASCRIPT}}**/
+
+    var modals = document.getElementsByClassName("modal");
+    window.onclick = function (event) {
+        for (var i = 0; i < modals.length; i++) {
+            if (event.target == modals[i]) {
+                modals[i].style.display = "none";
+            }
+        }
+    };
+</script>
+
+</body>
+</html>

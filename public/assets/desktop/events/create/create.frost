@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Event</title>
+
+    <link href="../../desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div class="centerForm _row" style="background-color: #f3f3f4">
+        <div class="title">
+            Create Event
+        </div>
+
+        <div class="description">
+            Create an Event for you organization
+        </div>
+        <form id="FORM">
+            <div id="NAME" style="color: #cc0000"></div>
+            <input name="NAME" type="text" placeholder="Display Name"><br>
+
+            <div id="LOCATION" style="color: #cc0000"></div>
+            <input name="LOCATION" type="text" placeholder="Location"><br>
+
+            <div id="DESCRIPTION" style="color: #cc0000"></div>
+            <textarea name="DESCRIPTION" rows="10" cols="50" placeholder="Description"></textarea>
+
+            <div id="START_DATE" style="color: #cc0000"></div>
+            <label>Start Date:
+                <input name="START_DATE" type="datetime-local" placeholder="Display Name"><br>
+            </label>
+
+            <div id="END_DATE" style="color: #cc0000"></div>
+
+            <label>End Date:
+                <input name="END_DATE" type="datetime-local" placeholder="Display Name"><br>
+            </label>
+
+            <div id="DROP" style="color: #cc0000"></div>
+            <label>Event Type
+                <select name="DROP">
+                    <option value="0">Public</option>
+                    <option value="1">Private</option>
+                    <option value="2">Unlisted</option>
+                </select>
+            </label>
+            <br>
+            <input type="button" value="Create Event" onclick="create()">
+        </form>
+    </div>
+</div>
+
+<script>
+    var ID;
+    /**{{JAVASCRIPT}}**/
+</script>
+
+<script src="../../assets/scripts/Util.js"></script>
+<script src="../../desktop/events/create/create.js"></script>
+<script src="../../assets/scripts/Navbar.js"></script>
+
+<!--<script src="../../desktop/events/create/create.min.js"></script>-->
+</body>
+</html>

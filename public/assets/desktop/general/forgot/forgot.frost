@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commservus Forgot Password</title>
+
+    <link href="desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    <div class="centerForm _row">
+        <div class="title">
+            Forgot Password
+        </div>
+
+        <div class="description">
+            Fill the form to get an email with instructions on how to reset your password
+        </div>
+
+        <div class="status" id="status">
+
+        </div>
+
+        <form id="FORM">
+            <div id="ID" style="color: #cc0000"></div>
+            <input name="ID" type="text" placeholder="Username or Email"><br>
+
+            <input type="button" onclick="forgot()" value="Forgot"><br>
+            <br>
+            <div class="description">
+                Have an account?
+            </div>
+            <input type="button" onclick="location.href = '/login'" style="background-color: #b4b4b4" value="Login">
+            <input type="submit" style="display: none">
+        </form>
+    </div>
+</div>
+
+<!--<script src="assets/scripts/Util.js"></script>-->
+<!--<script src="desktop/general/forgot/forgot.js"></script>-->
+
+<script src="desktop/general/forgot/forgot.min.js"></script>
+</body>
+</html>

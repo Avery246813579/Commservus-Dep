@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commservus Admin</title>
+
+    <link href="../../desktop/assets/style/new.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div class="_side_max">
+        <div class="_row _nolap">
+            <div class="_title">
+                Whitelist
+
+                <div class="_description">
+                    Groups for Members
+                </div>
+            </div>
+
+            <table class="_table">
+                <tr>
+                    <th>
+                        Content
+                    </th>
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+                {{WHITELIST}}
+            </table>
+        </div>
+    </div>
+
+    <div class="_side_min">
+    </div>
+</div>
+
+<div id="_footer">
+    <b>Copyright</b> Frostbyte LLC © 2017
+</div>
+
+<div class="modal" id="addUser">
+    <div class="content" style="margin: auto">
+        <div class="full">
+            <input type="text" id="adminSearch" placeholder="Username">
+
+            <div id="adminAddPanel">
+                <div class="_row" style="background-color: #E0E0E0; width: 50%; margin: auto;">
+                    No search
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<script src="../../assets/scripts/Util.js"></script>-->
+<!--<script src="../../assets/scripts/Navbar.js"></script>-->
+<!--<script src="../../desktop/admin/whitelist/whitelist.js"></script>-->
+
+<script src="../../desktop/admin/whitelist/whitelist.min.js"></script>
+
+</body>
+</html>

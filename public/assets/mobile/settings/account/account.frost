@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commservus</title>
+
+    <link href="../../mobile/assets/style/mobile.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../assets/plugins/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../assets/favicon.png">
+</head>
+<body>
+
+<div id="_container">
+    {{NAVBAR}}
+
+    <div id="content">
+        <div class="block">
+            <div class="bTitle">
+                Account
+            </div>
+
+            <div class="content">
+                <div class="bItemTitle">
+                    Display Name
+                </div>
+
+                <input type="text" placeholder="Display Name">
+
+                <div class="bItemTitle">
+                    Bio
+                </div>
+
+                <textarea placeholder="Bio"></textarea>
+
+                <input type="button" value="Update Account">
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="content">
+
+                <div class="bTitle">
+                    Email
+                </div>
+
+                <div class="bItemTitle">
+                    Email Address
+                </div>
+
+                <input type="text" placeholder="Email">
+
+                <input type="button" value="Update Email">
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="bTitle">
+                Change Password
+            </div>
+
+            <div class="content">
+                <div class="bItemTitle">
+                    New Password
+                </div>
+
+                <input type="password" placeholder="New Password">
+
+                <div class="bItemTitle">
+                    Confirm New Password
+                </div>
+
+                <input type="password" placeholder="Confirm Password">
+
+                <div class="bItemTitle">
+                    Current Password
+                </div>
+
+                <input type="password" placeholder="Current Password">
+
+                <div class="status" style="margin-top: 10px;">
+                    ASDASD
+                </div>
+
+                <input type="button" value="Change Password">
+            </div>
+        </div>
+    </div>
+
+    {{FOOTER}}
+</div>
+
+{{NAVBAR_ASSETS}}
+
+<script>
+    var loggedIn = false;
+    /**{{JAVASCRIPT}}**/
+</script>
+<script src="../../assets/scripts/Util.js"></script>
+<script src="../../mobile/settings/account/account.js"></script>
+<script src="../../mobile/assets/scripts/Navbar.js"></script>
+
+<!--<script src="../../desktop/mobile/settings/account/account.min.js"></script>-->
+</body>
+</html>

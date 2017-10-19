@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Abeezee, sans-serif;
+}
+
+html, body, #fullheight {
+    min-height: 100% !important;
+    height: 100%;
+}
+
+html {
+    overflow: auto;
+    background-color: #E0E0E0;
+}
+
+body {
+    overflow: auto;
+}
+
+#container{
+    height: 100%;
+}
+
+#top-nav {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    background-color: #1CAC78;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    z-index: 5;
+}
+
+#top-nav .search {
+    margin: auto;
+    text-align: center;
+    display: inline-block;
+    height: 30px;
+    padding-top: 10px;
+    font-size: 20px;
+    position: absolute;
+    left: 7.25%;
+    width: 72.5%;
+    z-index: -1;
+}
+
+#top-nav .search input {
+    position: relative;
+    top: -5px;
+    height: 25px;
+}
+
+#top-nav .search #search-content {
+    display: none;
+}
+
+#top-nav .search #search-content:hover{
+    margin: auto;
+    background-color: #E0E0E0;
+    border: solid 1px #3A3A3A;
+    width: 20%;
+    display: block;
+}
+
+
+#top-nav .search input:focus + #search-content {
+    margin: auto;
+    background-color: #E0E0E0;
+    border: solid 1px #3A3A3A;
+    width: 20%;
+    display: block;
+}
+
+#search-content .row{
+    text-align: left;
+}
+
+#top-nav .account {
+    float: right;
+    margin-right: 15%;
+    font-size: 20px;
+}
+
+#top-nav .account a {
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    height: 30px;
+    color: #252525;
+}
+
+#top-nav #nav {
+    position: relative;
+    float: left;
+    font-size: 20px;
+}
+
+#top-nav #nav .right {
+    float: right;
+}
+
+#top-nav #nav a {
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    height: 30px;
+    color: #252525;
+}
+
+#top-nav #nav a.active {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: #2567A7;
+    height: 27px;
+    border-bottom: solid 3px #2567A7;
+}
+
+#top-nav #nav a.active:hover {
+    border-bottom: solid 3px #2567A7;
+}
+
+#top-nav #nav a:hover {
+    height: 27px;
+    color: #2567A7;
+    border-bottom: solid 3px #2567A7;
+}
+
+#top-nav .account a.active {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: #2567A7;
+    height: 27px;
+    border-bottom: solid 3px #2567A7;
+}
+
+#top-nav .account a.active:hover {
+    border-bottom: solid 3px #2567A7;
+}
+
+#top-nav .account a:hover {
+    height: 27px;
+    color: #2567A7;
+    border-bottom: solid 3px #2567A7;
+}
+
+#footer {
+    position: absolute;
+    bottom: -74px;
+    left: 0;
+    background-color: #1CAC78;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #252525;
+}
+
+#footer a {
+    text-decoration: none;
+    color: #2567A7;
+}
+
+#footer a.active {
+    color: #2567A7;
+}
+
+#footer a.left {
+    padding-left: 10px;
+}
