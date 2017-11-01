@@ -1,5 +1,5 @@
 # Commservus
-Simplifying community service. 
+Commservus is a project I wrote for my school back in high school. A community service organization could create an account and host events, and students could find those events. A students hours would be tracked and a school could track their hours. 
 
 ## Installation
 1. Download the project
@@ -17,11 +17,3 @@ If you want to test the project use the command:
 ```shell
     npm test
 ```
-
-## Roadmap 
-https://trello.com/b/pqcMe0Mx/commservus-roadmap
-
-
-## Temp Readme
-
-- Close Account
