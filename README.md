@@ -7,10 +7,8 @@ This codebase contains both a server in Node.js and a website in a custom render
 I use Mocha and Chai for unit testing in this project. 
 
 ## Installation
-1. Download the project
-2. Download Node.js with npm 
-3. Locate the project and open a command prompt and go to the projects folder 
-4. Run the command "npm install" 
+1. Clone the project ``git clone https://github.com/Avery246813579/Commservus.git``
+1. Install the Node Modules ``npm install``
 
 If you want to run the project use the command:
 ```shell
@@ -22,3 +20,5 @@ If you want to test the project use the command:
 ```shell
     npm test
 ```
+
+Note: Make sure you have your database configured in server/tables/TableHandler.js
