@@ -1,3 +1,5 @@
+'use strict'
+
 var RouteHelper = require('./../util/RouteHelper');
 var Errors = require('./../util/Errors');
 

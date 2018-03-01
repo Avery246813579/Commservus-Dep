@@ -5,7 +5,6 @@ var Sessions = require('./../tables/account/Sessions');
 var RouteHelper = require('./RouteHelper');
 var Errors = require('./Errors');
 var prototype = module.exports;
-var JWT = require('jsonwebtoken');
 
 prototype.validate = function (req, res, callback) {
     var cookies = Util.parseCookies(req);

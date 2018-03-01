@@ -1,3 +1,5 @@
+'use strict'
+
 var Errors = require('./../util/Errors');
 var Util = require('./../util/Util');
 var RouteHelper = require('./../util/RouteHelper');
@@ -58,14 +60,14 @@ function AccountRoute(app) {
                     var match = false, domain = req.body['EMAIL'].replace(/.*@/, "");
                     for (var i = 0; i < wRows.length; i++) {
                         if (wRows[i]['TYPE'] == 0) {
-                            if (wRows[i]['CONTENT'].toLowerCase() == domain.toLowerCase()) {
+                            if (wRows[i]['CONTENT'].toLowerCase() === domain.toLowerCase()) {
                                 match = true;
                                 break;
                             }
                         }
 
                         if (wRows[i]['TYPE'] == 1) {
-                            if (wRows[i]['CONTENT'].toLowerCase() == req.body['EMAIL'].toLowerCase()) {
+                            if (wRows[i]['CONTENT'].toLowerCase() === req.body['EMAIL'].toLowerCase()) {
                                 match = true;
                                 break;
                             }
@@ -105,20 +107,6 @@ function AccountRoute(app) {
                                     SID: payload['SESSION']['UNIQUE_ID'],
                                     CID: payload['CLIENT']['UNIQUE_ID']
                                 });
-
-                                var tCan = Util.randomString(64);
-                                Emails.insert({
-                                    ACCOUNT_ID: iRow['ID'],
-                                    TYPE: 0,
-                                    TOKEN: tCan,
-                                    DATE_SENT: Util.getTime(),
-                                    DATE_EXPIRES: Util.formatTime(Util.getServerTime().addMinutes(60 * 24))
-                                }, function (eIErr) {
-                                });
-
-                                if (Util.getURL() == ".commservus.com") {
-                                    EmailUtil.sendEmail(req.body['EMAIL'], "Commservus Authentication", "<a href='https://" + Util.getURL().substr(1) + "/email?TOKEN=" + tCan + "&USERNAME=" + req.body['USERNAME'] + "'>Click to confirm your email for (" + req.body['USERNAME'] + ")</a>");
-                                }
 
                                 res.status(200).json({
                                     success: true

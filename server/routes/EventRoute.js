@@ -1,3 +1,5 @@
+'use strict'
+
 var Errors = require('./../util/Errors');
 var Util = require('./../util/Util');
 var Accounts = require('./../tables/account/Accounts');
